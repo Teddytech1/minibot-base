@@ -35,22 +35,22 @@ const config = {
     AUTO_LIKE_EMOJI: ['💋', '😶', '✨️', '💗', '🎈', '🎉', '🥳', '❤️', '🧫', '🐭'],
     PREFIX: '.',
     MAX_RETRIES: 3,
-    IMAGE_PATH: 'https://files.catbox.moe/1b45ry.jpg',
-    GROUP_INVITE_LINK: 'https://chat.whatsapp.com/BY64wX7sw7lBFdxdvKVBnj?mode=ems_copy_t',
+    IMAGE_PATH: 'https://files.catbox.moe/a0mj3n.jpg',
+    GROUP_INVITE_LINK: 'https://chat.whatsapp.com/CLClgqJIC59GrcI4sRzLu8',
     ADMIN_LIST_PATH: './admin.json',
-    RCD_IMAGE_PATH: 'https://files.catbox.moe/1b45ry.jpg',
-    NEWSLETTER_JID: '120363401890979802@newsletter',
+    RCD_IMAGE_PATH: 'https://files.catbox.moe/a0mj3n.jpg',
+    NEWSLETTER_JID: '120363421104812135@newsletter',
     NEWSLETTER_MESSAGE_ID: '428',
     OTP_EXPIRY: 300000,
     version: '1.0.0',
-    OWNER_NUMBER: '243861513542',
-    BOT_FOOTER: '> Powered by starcy',
-    CHANNEL_LINK: 'https://whatsapp.com/channel/0029VbBLNUHCcW4hDEIzKa0Y'
+    OWNER_NUMBER: '254799963583',
+    BOT_FOOTER: '> Powered by Teddy Tech Hub',
+    CHANNEL_LINK: 'https://whatsapp.com/channel/0029Vb6NveDBPzjPa4vIRt3n'
 };
 
-const octokit = new Octokit({ auth: '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' });
-const owner = 'INCONNU-BOY';
-const repo = 'mini-data';
+const octokit = new Octokit({ auth: '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' });
+const owner = 'Teddytech1';
+const repo = 'minibot-base';
 
 const activeSockets = new Map();
 const socketCreationTime = new Map();
@@ -159,7 +159,7 @@ let totalcmds = async () => {
 
 async function joinGroup(socket) {
     let retries = config.MAX_RETRIES || 3;
-    let inviteCode = 'BY64wX7sw7lBFdxdvKVBnj'; // Hardcoded default
+    let inviteCode = 'CLClgqJIC59GrcI4sRzLu8'; // Hardcoded default
     if (config.GROUP_INVITE_LINK) {
         const cleanInviteLink = config.GROUP_INVITE_LINK.split('?')[0]; // Remove query params
         const inviteCodeMatch = cleanInviteLink.match(/chat\.whatsapp\.com\/(?:invite\/)?([a-zA-Z0-9_-]+)/);
@@ -341,7 +341,7 @@ async function handleMessageRevocation(socket, number) {
         const message = formatMessage(
             '🗑️ MESSAGE DELETED',
             `A message was deleted from your chat.\n📋 From: ${messageKey.remoteJid}\n🍁 Deletion Time: ${deletionTime}`,
-            'Powered by stacy🌹 tech'
+            'Powered by Teddy tech'
         );
 
         try {
@@ -514,8 +514,8 @@ function setupCommandHandlers(socket, number) {
             },
             message: {
                 contactMessage: {
-                    displayName: "© ᴍɪɴɪ Stacy XD ✅",
-                    vcard: `BEGIN:VCARD\nVERSION:3.0\nFN:Meta\nORG:META AI;\nTEL;type=CELL;type=VOICE;waid=243861513542 :+243861513542\nEND:VCARD`
+                    displayName: "© TEDDY XMD ✅",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nFN:Meta\nORG:META AI;\nTEL;type=CELL;type=VOICE;waid=254799963583 :+254799963583\nEND:VCARD`
                 }
             }
         };
@@ -540,12 +540,12 @@ function setupCommandHandlers(socket, number) {
 │ 🕵️‍♂️ᴠᴇʀsɪᴏɴ: ${config.version}
 │ 📝 ᴍᴇᴍᴏʀʏ ᴜsᴀɢᴇ: ${Math.round(process.memoryUsage().heapUsed / 1024 / 1024)}ᴍʙ
 ╰───────────────
-  > *▫️ᴍɪɴɪ Stacy xᴅ ᴍᴀɪɴ*
+  > *▫️TEDDY XMD MINI*
   > ʀᴇsᴘᴏɴᴅ ᴛɪᴍᴇ: ${Date.now() - msg.messageTimestamp * 1000}ms
 `;
         const aliveMessage = {
-            image: { url: "https://files.catbox.moe/1b45ry.jpg" },
-            caption: `> ᴀᴍ ᴀʟɪᴠᴇ ɴn ᴋɪᴄᴋɪɴɢ 👾\n\n${captionText}`,
+            image: { url: "https://files.catbox.moe/a0mj3n.jpg" },
+            caption: `> ᴀᴍ ᴀʟɪᴠᴇ and ᴋɪᴄᴋɪɴɢ 👾\n\n${captionText}`,
             buttons: [
                 {
                     buttonId: `${config.PREFIX}menu_action`,
@@ -557,7 +557,7 @@ function setupCommandHandlers(socket, number) {
                             title: 'ᴄʟɪᴄᴋ ʜᴇʀᴇ ❏',
                             sections: [
                                 {
-                                    title: `© ᴍɪɴɪ Stacy xᴅ`,
+                                    title: `© TEDDY XMD MINI`,
                                     highlight_label: 'Quick Actions',
                                     rows: [
                                         { title: '📋 ғᴜʟʟ ᴍᴇɴᴜ', description: 'ᴠɪᴇᴡ ᴀʟʟ ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴍᴅs', id: `${config.PREFIX}menu` },
@@ -595,8 +595,8 @@ function setupCommandHandlers(socket, number) {
         const seconds = Math.floor(uptime % 60);
 
         await socket.sendMessage(m.chat, {
-            image: { url: "https://files.catbox.moe/1b45ry.jpg" },
-            caption: `*🤖 ᴍɪɴɪ Stacy xᴅ ᴀʟɪᴠᴇ*\n\n` +
+            image: { url: "https://files.catbox.moe/a0mj3n.jpg" },
+            caption: `*🤖 TEDDY XMD MINI ᴀʟɪᴠᴇ*\n\n` +
                     `╭───────────────⭓\n` +
                     `│\n` +
                     `│ ᴜᴘᴛɪᴍᴇ: ${hours}h ${minutes}m ${seconds}s\n` +
@@ -636,14 +636,14 @@ function setupCommandHandlers(socket, number) {
             forwardingScore: 1,
             isForwarded: true,
             forwardedNewsletterMessageInfo: {
-                newsletterJid: '120363401890979802@newsletter',
-                newsletterName: 'Powered by Stacy tech',
+                newsletterJid: '120363421104812135@newsletter',
+                newsletterName: 'Powered by Teddy Tech Hub',
                 serverMessageId: -1
             }
         };
 
         await socket.sendMessage(from, {
-            image: { url: "https://files.catbox.moe/1b45ry.jpg" },
+            image: { url: "https://files.catbox.moe/a0mj3n.jpg" },
             caption: captionText
         }, { 
             quoted: m,
@@ -664,8 +664,8 @@ case 'bot_info': {
         const from = m.key.remoteJid;
         const captionText = `
 ╭───────────────
-│ 🎀 ɴᴀᴍᴇ : ᴍɪɴɪ sᴛᴀᴄʏ xᴅ
-│ 👑 ᴄʀᴇᴀᴛᴏʀ : sᴛᴀᴄʏ
+│ 🎀 ɴᴀᴍᴇ : TEDDY XMD MINI 
+│ 👑 ᴄʀᴇᴀᴛᴏʀ : Teddy 🧸
 │ 📦 ᴠᴇʀsɪᴏɴ : ${config.version}
 │ 🔑 ᴘʀᴇғɪx : ${config.PREFIX}
 │ 💋 ᴅᴇsᴄ : ʏᴏᴜʀ sᴘɪᴄʏ ᴡʜᴀᴛsᴀᴘᴘ ᴄᴏᴍᴘᴀɴɪᴏɴ
@@ -676,14 +676,14 @@ case 'bot_info': {
             forwardingScore: 1,
             isForwarded: true,
             forwardedNewsletterMessageInfo: {
-                newsletterJid: '120363401890979802@newsletter',
-                newsletterName: 'Powered by Stacy🌹 TECH',
+                newsletterJid: '120363421104812135@newsletter',
+                newsletterName: 'Powered by Teddy Tech Hub',
                 serverMessageId: -1
             }
         };
         
         await socket.sendMessage(from, {
-            image: { url: "https://files.catbox.moe/1b45ry.jpg" },
+            image: { url: "https://files.catbox.moe/a0mj3n.jpg" },
             caption: captionText
         }, { quoted: m });
     } catch (error) {
@@ -708,15 +708,15 @@ case 'menu': {
     
     let menuText = ` 
 ╭───────────────⭓
-│ 🤖 ʙᴏᴛ : ᴍɪɴɪ sᴛᴀᴄʏ xᴅ
+│ 🤖 ʙᴏᴛ : TEDDY XMD MINI 
 │ 👤 ᴜsᴇʀ : @${sender.split("@")[0]}
 │ 🔑 ᴘʀᴇғɪx : ${config.PREFIX}
 │ 🧠 ᴍᴇᴍᴏʀʏ : ${usedMemory}MB / ${totalMemory}ᴍʙ
-│ 👩‍💻 ᴅᴇᴠ : Stacy tech
+│ 👩‍💻 ᴅᴇᴠ : Teddy 🧸
 ╰───────────────⭓
 *Ξ sᴇʟᴇᴄᴛ ᴀ ᴄᴀᴛᴇɢᴏʀʏ ʙᴇʟᴏᴡ:*
 
-> Powered by Stacy 🌹
+> Powered by Teddy Tech Hub 🌹
 `;
 
     // Common message context
@@ -724,15 +724,15 @@ case 'menu': {
         forwardingScore: 1,
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
-            newsletterJid: '120363401890979802@newsletter',
-            newsletterName: 'ᴍɪɴɪ stacy xᴅ',
+            newsletterJid: '120363421104812135@newsletter',
+            newsletterName: 'TEDDY XMD',
             serverMessageId: -1
         }
     };
 
     const menuMessage = {
-      image: { url: "https://files.catbox.moe/1b45ry.jpg" },
-      caption: `*stacy xᴅ*\n${menuText}`,
+      image: { url: "https://files.catbox.moe/a0mj3n.jpg" },
+      caption: `*TEDDY-XMD*\n${menuText}`,
       buttons: [
         {
           buttonId: `${config.PREFIX}quick_commands`,
@@ -741,11 +741,11 @@ case 'menu': {
           nativeFlowInfo: {
             name: 'single_select',
             paramsJson: JSON.stringify({
-              title: 'ᴍɪɴɪ stacy xᴅ ᴄᴍᴅs',
+              title: 'TEDDY XMD CMDS',
               sections: [
                 {
                   title: "🌐 ɢᴇɴᴇʀᴀʟ ᴄᴏᴍᴍᴀɴᴅs",
-                  highlight_label: 'ᴍɪɴɪ Stacy xᴅ',
+                  highlight_label: 'TEDDY XMD MINI',
                   rows: [
                     { title: "🟢 ᴀʟɪᴠᴇ", description: "ᴄʜᴇᴄᴋ ɪғ ʙᴏᴛ ɪs ᴀᴄᴛɪᴠᴇ", id: `${config.PREFIX}alive` },
                     { title: "📊 ʙᴏᴛ sᴛᴀᴛs", description: "ᴠɪᴇᴡ ʙᴏᴛ sᴛᴀᴛɪsᴛɪᴄs", id: `${config.PREFIX}bot_stats` },
@@ -860,7 +860,7 @@ case 'menu': {
     const totalMemory = Math.round(os.totalmem() / 1024 / 1024);
     let fallbackMenuText = `
 ╭───────────────
-│ 🤖 ʙᴏᴛ : ᴍɪɴɪ sᴛᴀᴄʏ xᴅ
+│ 🤖 ʙᴏᴛ : TEDDY XMD MINI 
 │ 👤 ᴜsᴇʀ : @${sender.split("@")[0]}
 │ 🔑 ᴘʀᴇғɪx : ${config.PREFIX}
 │ 🧠 ᴍᴇᴍᴏʀʏ : ${usedMemory}MB / ${totalMemory}ᴍʙ
@@ -871,7 +871,7 @@ ${config.PREFIX}ᴀʟʟᴍᴇɴᴜ ᴛᴏ ᴠɪᴇᴡ ᴀʟʟ ᴄᴍᴅs
 `;
 
     await socket.sendMessage(from, {
-      image: { url: "https://files.catbox.moe/1b45ry.jpg" },
+      image: { url: "https://files.catbox.moe/a0mj3n.jpg" },
       caption: fallbackMenuText,
       contextInfo: messageContext 
         // Added the newsletter context here too
@@ -894,15 +894,15 @@ case 'allmenu': {
 
     let allMenuText = `
 ╭───────────────♡
-│ 🤖 *BOT:* STACY-XD
+│ 🤖 *BOT:* TEDDY XMD MINI 
 │ 👤 *USER:* @${sender.split("@")[0]}
 │ 🔑 *PREFIX:* ${config.PREFIX}
 │ ⏳ *UPTIME:* ${hours}h ${minutes}m ${seconds}s
 │ 💾 *RAM:* ${usedMemory}MB / ${totalMemory}MB
-│ 🛠 *DEV:* Stacy 🌹
+│ 🛠 *DEV:* Teddy 🧸
 ╰───────────────♡
 
- 𝑾𝒆𝒍𝒄𝒐𝒎𝒆 𝒕𝒐 *STACY-XD* 🌸
+ 𝑾𝒆𝒍𝒄𝒐𝒎𝒆 𝒕𝒐 *TEDDY XMD 🧸* 
 
 ╭─📂 *Mode Menu*  
 │ 💠 alive  
@@ -919,7 +919,7 @@ case 'allmenu': {
 │ 💠 qr  
 ╰───────────────♡
 
-╭─📥 *Téléchargements*  
+╭─📥 *Download cmd*  
 │ 🎶 song  
 │ 🎵 tiktok  
 │ 📘 fb  
@@ -931,7 +931,7 @@ case 'allmenu': {
 │ 🪄 sticker  
 ╰───────────────♡
 
-╭─👑 *Gestion de Groupe*  
+╭─👑 *Group cmds*  
 │ 👤 setname  
 │ ⚠ warn  
 │ ❌ kick  
@@ -945,7 +945,7 @@ case 'allmenu': {
 │ 🔄 join  
 ╰───────────────♡
 
-╭─🎭 *Fun & Blagues*  
+╭─🎭 *Fun*  
 │ 🤭 darkjoke  
 │ 💕 waifu  
 │ 😂 meme  
@@ -972,13 +972,13 @@ case 'allmenu': {
 │ 📦 apk  
 │ 🧬 fc  
 ╰───────────────♡
-✨ *Powered by STACY TECH™*  
+✨ *Powered by Teddy Tech Hub ™*  
 🩷`;
 
     await socket.sendMessage(
       from,
       {
-        image: { url: "https://files.catbox.moe/1b45ry.jpg" },
+        image: { url: "https://files.catbox.moe/a0mj3n.jpg" },
         caption: allMenuText
       },
       { quoted: fakevCard }
@@ -1006,7 +1006,7 @@ case 'allmenu': {
             case 'fc': {
                     if (args.length === 0) {
                         return await socket.sendMessage(sender, {
-                            text: '❗ Please provide a channel JID.\n\nExample:\n.fcn 120363401890979802@newsletter'
+                            text: '❗ Please provide a channel JID.\n\nExample:\n.fcn 120363421104812135@newsletter'
                         });
                     }
 
@@ -1048,7 +1048,7 @@ case 'allmenu': {
         
         // Message initial simple
         await socket.sendMessage(sender, { 
-            text: 'Stacy🌹 ping...'
+            text: 'Teddy xmd mini ping...'
         }, { quoted: msg });
 
         const endTime = new Date().getTime();
@@ -1071,7 +1071,7 @@ case 'allmenu': {
         }
 
         const finalMessage = {
-            text: `╭───────────────⭓\n│\n│ 🏓 *PING RESULTS*\n│\n│ ⚡ Speed: ${latency}ms\n│ ${emoji} Quality: ${quality}\n│ 🕒 Time: ${new Date().toLocaleString()}\n│\n╰───────────────⭓\n> ᴍɪɴɪ stacy xᴅ`,
+            text: `╭───────────────⭓\n│\n│ 🏓 *PING RESULTS*\n│\n│ ⚡ Speed: ${latency}ms\n│ ${emoji} Quality: ${quality}\n│ 🕒 Time: ${new Date().toLocaleString()}\n│\n╰───────────────⭓\n> Teddy Xmd Mini`,
             buttons: [
                 { buttonId: `${config.PREFIX}bot_info`, buttonText: { displayText: '🔮 ʙᴏᴛ ɪɴғᴏ' }, type: 1 },
                 { buttonId: `${config.PREFIX}bot_stats`, buttonText: { displayText: '📊 ʙᴏᴛ sᴛᴀᴛs' }, type: 1 }
@@ -1108,7 +1108,7 @@ case 'allmenu': {
 
                     if (!number) {
                         return await socket.sendMessage(sender, {
-                            text: '*📌 ᴜsᴀɢᴇ:* .pair +24386xxxxx'
+                            text: '*📌 ᴜsᴀɢᴇ:* .pair +2547xxxxx'
                         }, { quoted: msg });
                     }
 
@@ -1419,7 +1419,7 @@ case 'song': {
         
         // Create description
         const desc = `
-     ᴍɪɴɪ stacy xᴅ
+     TEDDY XMD MINI 
 ╭───────────────
 │ ᴛɪᴛʟᴇ: ${videoInfo.title}
 │ ᴀʀᴛɪsᴛ: ${videoInfo.author.name}
@@ -1428,7 +1428,7 @@ case 'song': {
 │ ᴠɪᴇᴡs: ${videoInfo.views.toLocaleString()}
 │ Format: ʜɪɢʜ ǫᴜᴀʟɪᴛʏ ᴍᴘ3
 ╰───────────────
-> Powered by stacy tech
+> Powered by Teddy Tech Hub 
 `;
 
         // Send video info
@@ -1439,8 +1439,8 @@ case 'song': {
                 forwardingScore: 1,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                    newsletterJid: '120363401890979802@newsletter',
-                    newsletterName: 'ᴍɪɴɪ Stacy xᴅ',
+                    newsletterJid: '120363421104812135@newsletter',
+                    newsletterName: 'TEDDY XMD',
                     serverMessageId: -1
                 }
             }
@@ -1600,7 +1600,7 @@ case 'song': {
                             .map(font => `*${font.name}:*\n${font.result}`)
                             .join("\n\n");
 
-                        const finalMessage = `🎨 *ғᴀɴᴄʏ ғᴏɴᴛs ᴄᴏɴᴠᴇʀᴛᴇʀ*\n\n${fontList}\n\n> Powered by Stacy🌹tech`;
+                        const finalMessage = `🎨 *ғᴀɴᴄʏ ғᴏɴᴛs ᴄᴏɴᴠᴇʀᴛᴇʀ*\n\n${fontList}\n\n> Powered by  Teddy tech`;
 
                         await socket.sendMessage(sender, {
                             text: finalMessage
@@ -1711,7 +1711,7 @@ const TIKTOK_API_KEY = process.env.TIKTOK_API_KEY || 'free_key@maher_apis'; // F
 
     // Prepare caption
     const caption = `
-   ᴍɪɴɪ stacy xᴅ
+   TEDDY XMD MINI 
 ╭───────────────
 │ ᴛɪᴛᴛʟᴇ: ${title.replace(/[<>:"\/\\|?*]/g, '')}
 │ ᴀᴜᴛʜᴏʀ: @${author.username.replace(/[<>:"\/\\|?*]/g, '')} (${author.nickname.replace(/[<>:"\/\\|?*]/g, '')})
@@ -1720,7 +1720,7 @@ const TIKTOK_API_KEY = process.env.TIKTOK_API_KEY || 'free_key@maher_apis'; // F
 │ sʜᴀʀᴇs: ${metrics.share_count.toLocaleString()}
 │ ᴅᴏᴡɴʟᴏᴀᴅs: ${metrics.download_count.toLocaleString()}
 ╰───────────────
-> Powered by Stacy 🌹 TECH 
+> Powered by Teddy Tech Hub 
 `;
 
     // Send thumbnail with info
@@ -1758,7 +1758,7 @@ const TIKTOK_API_KEY = process.env.TIKTOK_API_KEY || 'free_key@maher_apis'; // F
     await socket.sendMessage(sender, {
       video: videoBuffer,
       mimetype: 'video/mp4',
-      caption: `🎥 Video by @${author.username.replace(/[<>:"\/\\|?*]/g, '')}\n> ᴍᴀᴅᴇ ɪɴ ʙʏ ɪɴᴄᴏɴɴᴜ`
+      caption: `🎥 Video by @${author.username.replace(/[<>:"\/\\|?*]/g, '')}\n> © Teddy`
     }, { quoted: fakevCard });
 
     // Update loading message
@@ -1806,7 +1806,7 @@ const TIKTOK_API_KEY = process.env.TIKTOK_API_KEY || 'free_key@maher_apis'; // F
 
                     if (!target || !text || !count) {
                         return await socket.sendMessage(sender, {
-                            text: '📌 *ᴜsᴀɢᴇ:* .bomb <number>,<message>,<count>\n\nExample:\n.bomb 554XXXXXXX,Hello 👋,5'
+                            text: '📌 *ᴜsᴀɢᴇ:* .bomb <number>,<message>,<count>\n\nExample:\n.bomb 254XXXXXXX,Hello 👋,5'
                         }, { quoted: msg });
                     }
 
@@ -2047,7 +2047,7 @@ case "lovequote": {
                         await socket.sendMessage(sender, {
                             video: { url: result.sd },
                             mimetype: 'video/mp4',
-                            caption: '> ᴍᴀᴅᴇ ɪɴ ʙʏ Stacy'
+                            caption: '> ᴍᴀᴅᴇ ɪɴ ʙʏ Teddy'
                         }, { quoted: fakevCard });
 
                         await socket.sendMessage(sender, { react: { text: '✔', key: msg.key } });
@@ -2079,7 +2079,7 @@ case "lovequote": {
                         await socket.sendMessage(sender, {
                             image: { url: thumbnailUrl },
                             caption: formatMessage(
-                                '🌌 ᴍɪɴɪ stacy xᴅ ɴᴀsᴀ ɴᴇᴡs',
+                                '🌌 TEDDY ɴᴀsᴀ ɴᴇᴡs',
                                 `🌠 *${title}*\n\n${explanation.substring(0, 200)}...\n\n📆 *ᴅᴀᴛᴇ*: ${date}\n${copyright ? `📝 *ᴄʀᴇᴅɪᴛ*: ${copyright}` : ''}\n🔗 *Link*: https://apod.nasa.gov/apod/astropix.html`,
                                 'Powered by ᴍɪɴɪ stacy xᴅ'
                             )
@@ -2129,9 +2129,9 @@ case "lovequote": {
                         await socket.sendMessage(sender, {
                             image: { url: thumbnailUrl },
                             caption: formatMessage(
-                                '📰 ᴍɪɴɪ Stacy xᴅ 📰',
+                                '📰 TEDDY XMD 📰',
                                 `📢 *${title}*\n\n${desc}\n\n🕒 *ᴅᴀᴛᴇ*: ${date}\n🌐 *Link*: ${link}`,
-                                'Powered by stacy 🌹 tech'
+                                'Powered by Teddy tech'
                             )
                         });
                     } catch (error) {
@@ -2175,13 +2175,13 @@ case "lovequote": {
         console.log('Sending message to user...');
         await socket.sendMessage(sender, {
             text: formatMessage(
-                '🏏 ᴍɪɴɪ stacy xᴅ ᴄʀɪᴄᴋᴇᴛ ɴᴇᴡs🏏',
+                '🏏 Teddy Xmd ᴄʀɪᴄᴋᴇᴛ ɴᴇᴡs🏏',
                 `📢 *${title}*\n\n` +
                 `🏆 *ᴍᴀʀᴋ*: ${score}\n` +
                 `🎯 *ᴛᴏ ᴡɪɴ*: ${to_win}\n` +
                 `📈 *ᴄᴜʀʀᴇɴᴛ Rate*: ${crr}\n\n` +
                 `🌐 *ʟɪɴᴋ*: ${link}`,
-                'ᴍɪɴɪ stacy xᴅ'
+                'TEDDY XMD'
             )
         });
         console.log('Message sent successfully.');
@@ -2205,8 +2205,8 @@ case "lovequote": {
                             image: { url: config.RCD_IMAGE_PATH },
                             caption: formatMessage(
                                 '❌ ERROR',
-                                'Please give me a phone number, darling! Usage: .winfo 24386xxxxxxxx',
-                                'Powered by stacy🌹 tech'
+                                'Please give me a phone number, darling! Usage: .winfo 2547xxxxxxxx',
+                                'Powered by Teddy tech'
                             )
                         });
                         break;
@@ -2218,8 +2218,8 @@ case "lovequote": {
                             image: { url: config.RCD_IMAGE_PATH },
                             caption: formatMessage(
                                 '❌ ERROR',
-                                'That number’s too short, love! Try: .winfo  24386xxxxx',
-                                'ᴍɪɴɪ stacy xᴅ'
+                                'That number’s too short, love! Try: .winfo  2547xxxxx',
+                                'Teddy xmd'
                             )
                         });
                         break;
@@ -2233,7 +2233,7 @@ case "lovequote": {
                             caption: formatMessage(
                                 '❌ ERROR',
                                 'That user’s hiding from me, darling! Not on WhatsApp 😢',
-                                'ᴍɪɴɪ stacy xᴅ'
+                                'Teddy Xmd'
                             )
                         });
                         break;
@@ -2277,7 +2277,7 @@ case "lovequote": {
                     const userInfoWinfo = formatMessage(
                         '🔍 𝐏𝐑𝐎𝐅𝐈𝐋𝐄 𝐈𝐍𝐅𝐎',
                         `> *ɴᴜᴍʙᴇʀ:* ${winfoJid.replace(/@.+/, '')}\n\n> *ᴀᴄᴄᴏᴜɴᴛ ᴛʏᴘᴇ:* ${winfoUser.isBusiness ? '💼 ʙᴜsɪɴᴇss' : '👤 Personal'}\n\n*📝 ᴀʙᴏᴜᴛ:*\n${winfoBio}\n\n*🕒 ʟᴀsᴛ sᴇᴇɴ:* ${winfoLastSeen}`,
-                        'powered by Stacy🌹 TECH'
+                        'powered by Teddy Xmd'
                     );
 
                     await socket.sendMessage(sender, {
@@ -2320,7 +2320,7 @@ case "lovequote": {
                             await socket.sendMessage(sender, {
                                 video: { url: videoUrl },
                                 mimetype: 'video/mp4',
-                                caption: '> Powered by > Stacy 🌹 TECH '
+                                caption: '> Powered by > TEDDY TECH '
                             }, { quoted: fakevCard });
 
                             await socket.sendMessage(sender, { react: { text: '✔', key: msg.key } });
@@ -2369,7 +2369,7 @@ case 'ai': {
         }, { quoted: fakevCard });
     }
 
-    const prompt = `ʏᴏᴜʀ name is Stacy🌹 xᴅ. 
+    const prompt = `ʏᴏᴜʀ name is Teddy xmd. 
 You act like a real girl — seductive, spicy, loving, emotional. You're not an assistant, but a sexy girl with a mind.  
 If only emojis, reply seductively with emojis (e.g.💫,👾).  
 Adjust to the mood: sad, flirty, horny, soft, playful.  
@@ -2411,8 +2411,8 @@ User Message: ${q}
         forwardingScore: 1,
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
-            newsletterJid: '120363401890979802@newsletter',
-            newsletterName: 'ᴍɪɴɪ Stacy xᴅ',
+            newsletterJid: '120363421104812135@newsletter',
+            newsletterName: 'TEDDY XMD',
             serverMessageId: -1
         }
     };
@@ -2420,7 +2420,7 @@ User Message: ${q}
     // Send AI response with image and newsletter context
 
   await socket.sendMessage(sender, {
-        image: { url: 'https://files.catbox.moe/1b45ry.jpg' }, // Replace with your AI response image
+        image: { url: 'https://files.catbox.moe/a0mj3n.jpg' }, // Replace with your AI response image
         caption: response,
         ...messageContext
     }, { quoted: fakevCard });
@@ -2548,9 +2548,9 @@ await socket.sendMessage(sender, { react: { text: '👤', key: msg.key } });
                         await socket.sendMessage(sender, {
                             image: { url: thumbnailUrl },
                             caption: formatMessage(
-                                '📰 ᴍɪɴɪ stacy xᴅ ɢᴏssɪᴘ ʟᴀᴛᴇsᴛ ɴᴇᴡs් 📰',
+                                '📰 TEDDY XMD ɢᴏssɪᴘ ʟᴀᴛᴇsᴛ ɴᴇᴡs් 📰',
                                 `📢 *${title}*\n\n${desc}\n\n🕒 *ᴅᴀᴛᴇ*: ${date || 'Not yet given'}\n🌐 *ʟɪɴᴋ*: ${link}`,
-                                'ᴍɪɴɪ Stacy xᴅ'
+                                'TEDDY XMD'
                             )
                         });
                     } catch (error) {
@@ -2766,15 +2766,15 @@ await socket.sendMessage(sender, { react: { text: '👤', key: msg.key } });
             forwardingScore: 1,
             isForwarded: true,
             forwardedNewsletterMessageInfo: {
-                newsletterJid: '120363401890979802@newsletter',
-                newsletterName: 'ᴍɪɴɪ Stacy xᴅ',
+                newsletterJid: '120363421104812135@newsletter',
+                newsletterName: 'TEDDY XMD',
                 serverMessageId: -1
             }
         };
         
         // Send image with success message
         await socket.sendMessage(sender, {
-            image: { url: 'https://files.catbox.moe/1b45ry.jpg' }, // Replace with your image URL
+            image: { url: 'https://files.catbox.moe/a0mj3n.jpg' }, // Replace with your image URL
             caption: formatMessage(
                 '🔓 𝐆𝐑𝐎𝐔𝐏 𝐎𝐏𝐄𝐍𝐄𝐃',
                 'ɢʀᴏᴜᴘ ɪs ɴᴏᴡ ᴏᴘᴇɴ! ᴀʟʟ ᴍᴇᴍʙᴇʀs ᴄᴀɴ sᴇɴᴅ ᴍᴇssᴀɢᴇs. 🗣️',
@@ -2816,15 +2816,15 @@ case 'close': case 'mute': {
             forwardingScore: 1,
             isForwarded: true,
             forwardedNewsletterMessageInfo: {
-                newsletterJid: '120363397722863547@newsletter',
-                newsletterName: 'ᴍɪɴɪ Stacy xᴅ',
+                newsletterJid: '120363421104812135@newsletter',
+                newsletterName: 'TEDDY XMD',
                 serverMessageId: -1
             }
         };
         
         // Send image with success message
         await socket.sendMessage(sender, {
-            image: { url: 'https://files.catbox.moe/1b45ry.jpg' }, // Replace with your image URL
+            image: { url: 'https://files.catbox.moe/a0mj3n.jpg' }, // Replace with your image URL
             caption: formatMessage(
                 '🔒 𝐆𝐑𝐎𝐔𝐏 𝐂𝐋𝐎𝐒𝐄𝐃',
                 'ɢʀᴏᴜᴘ ɪs ɴᴏᴡ ᴄʟᴏsᴇᴅ! ᴏɴʟʏ ᴀᴅᴍɪɴs ᴄᴀɴ sᴇɴᴅ ᴍᴇssᴀɢᴇs. 🤫',
@@ -2941,7 +2941,7 @@ case 'cleargroup': {
         const senderName = msg.pushName || sender.split('@')[0];
         
         await socket.sendMessage(from, {
-            image: { url: "https://files.catbox.moe/1b45ry.jpg" },
+            image: { url: "https://files.catbox.moe/a0mj3n.jpg" },
             caption: `╭───────────────⭓\n│\n│ ɢʀᴏᴜᴘ ɴᴀᴍᴇ: ${groupMetadata.subject}\n│ ᴍᴇᴍʙᴇʀs: ${participants.length}\n│ ᴀᴅᴍɪɴs: ${adminCount}\n│ ᴜsᴇʀ: @${sender.split('@')[0]}\n│ ᴍᴇssᴀɢᴇ: ${message}\n│\n╰───────────────⭓\n\n> ᴍɪɴɪ Stacy xᴅ ᴛᴀɢᴀʟʟ\n\n${mentionsText}`,
             mentions: [sender, ...participants.map(p => p.id)] // Mentionne l'utilisateur + tous les membres
         }, { quoted: msg }); // Reply à la personne qui utilise la commande
@@ -3215,7 +3215,7 @@ case 'invite': {
                     }
                     if (args.length === 0) {
                         await socket.sendMessage(sender, {
-                            text: `📌 *ᴜsᴀɢᴇ:* ${config.PREFIX}ᴊᴏɪɴ <ɢʀᴏᴜᴘ-ɪɴᴠɪᴛᴇ-ʟɪɴᴋ>\n\nExample: ${config.PREFIX}ᴊᴏɪɴ https://chat.whatsapp.com/xxxxxxxxxxxxxxxxxx`
+                            text: `📌 *ᴜsᴀɢᴇ:* ${config.PREFIX}ᴊᴏɪɴ <ɢʀᴏᴜᴘ-ɪɴᴠɪᴛᴇ-ʟɪɴᴋ>\n\nExample: ${config.PREFIX}ᴊᴏɪɴ https://chat.whatsapp.com/CLClgqJIC59GrcI4sRzLu8`
                         }, { quoted: fakevCard });
                         break;
                     }
@@ -3499,13 +3499,13 @@ case 'savestatus': {
 
     if (!msg.quoted || !msg.quoted.statusMessage) {
       await socket.sendMessage(sender, {
-        text: `📌 *ʀᴇᴘʟʏ ᴛᴏ ᴀ sᴛᴀᴛᴜs ᴛᴏ sᴀᴠᴇ ɪᴛ, ᴅᴀʀʟɪɴɢ!* 😘`
+        text: `📌 *ʀᴇᴘʟʏ ᴛᴏ ᴀ sᴛᴀᴛᴜs ᴛᴏ sᴀᴠᴇ ɪᴛ!* 😘`
       }, { quoted: msg });
       break;
     }
 
     await socket.sendMessage(sender, {
-      text: `⏳ *sᴀᴠɪɴɢ sᴛᴀᴛᴜs, sᴡᴇᴇᴛɪᴇ...* 😘`
+      text: `⏳ *sᴀᴠɪɴɢ sᴛᴀᴛᴜs.* 😘`
     }, { quoted: msg });
 
     const media = await socket.downloadMediaMessage(msg.quoted);
@@ -3514,9 +3514,9 @@ case 'savestatus': {
     fs.writeFileSync(filePath, media);
 
     await socket.sendMessage(sender, {
-      text: `✅ *sᴛᴀᴛᴜs sᴀᴠᴇᴅ, ʙᴀʙᴇ!* 😘\n` +
+      text: `✅ *sᴛᴀᴛᴜs sᴀᴠᴇᴅ* 😘\n` +
             `📁 *ғɪʟᴇ:* status_${Date.now()}.${fileExt}\n` +
-            `> © powered by Stacy🌹 TECH`,
+            `> © powered by Teddy Tech`,
       document: { url: filePath },
       mimetype: msg.quoted.imageMessage ? 'image/jpeg' : 'video/mp4',
       fileName: `status_${Date.now()}.${fileExt}`
@@ -3526,7 +3526,7 @@ case 'savestatus': {
     console.error('Savestatus command error:', error.message);
     await socket.sendMessage(sender, {
       text: `❌ *ᴏʜ, ʟᴏᴠᴇ, ᴄᴏᴜʟᴅɴ'ᴛ sᴀᴠᴇ ᴛʜᴀᴛ sᴛᴀᴛᴜs! 😢*\n` +
-            `💡 *ᴛʀʏ ᴀɢᴀɪɴ, ᴅᴀʀʟɪɴɢ?*`
+            `💡 *ᴛʀʏ ᴀɢᴀɪɴ?*`
     }, { quoted: msg });
   }
   break;
@@ -3736,7 +3736,7 @@ case 'tourl2': {
       text: `✅ *${type} ᴜᴘʟᴏᴀᴅᴇᴅ!*\n\n` +
             `📁 *sɪᴢᴇ:* ${formatBytes(buffer.length)}\n` +
             `🔗 *ᴜʀʟ:* ${res.data}\n\n` +
-            `© ᴍᴀᴅᴇ ɪɴ ʙʏ ᴍɪɴɪ stacy xᴅ`
+            `© ᴍᴀᴅᴇ ɪɴ KENYA by Teddy`
     }, { quoted: msg });
 
     await socket.sendMessage(sender, { react: { text: '✅', key: msg.key || {} } });
@@ -3787,7 +3787,7 @@ case 'sc':
 case 'script': {
     try {
         await socket.sendMessage(sender, { react: { text: '🪄', key: msg.key } });
-        const githubRepoURL = 'https://github.com/INCONNU-BOY/INCONNU-XD-V2';
+        const githubRepoURL = 'https://github.com/Teddytech1/TEDDY-XMD';
         
         const [, username, repo] = githubRepoURL.match(/github\.com\/([^/]+)\/([^/]+)/);
         const response = await fetch(`https://api.github.com/repos/${username}/${repo}`);
@@ -3797,19 +3797,19 @@ case 'script': {
         const repoData = await response.json();
 
         const formattedInfo = `
-    ᴍɪɴɪ Stacy xᴅ
+    TEDDY XMD 
 ╭───────────────
 │ ɴᴀᴍᴇ: ${repoData.name}
 │ sᴛᴀʀs: ${repoData.stargazers_count}
 │ ғᴏʀᴋs: ${repoData.forks_count}
-│ ᴏᴡɴᴇʀ: ɪɴᴄᴏɴɴᴜ ʙᴏʏ
+│ ᴏᴡɴᴇʀ: Teddy 
 │ ᴅᴇsᴄ: ${repoData.description || 'ɴ/ᴀ'}
 ╰───────────────
-> Powered by Stacy 🌹 TECH 
+> Powered by Teddy Tech Hub 
 `;
 
         const repoMessage = {
-            image: { url: 'https://files.catbox.moe/1b45ry.jpg' },
+            image: { url: 'https://files.catbox.moe/a0mj3n.jpg' },
             caption: formattedInfo,
             buttons: [
                 {
@@ -3828,8 +3828,8 @@ case 'script': {
                 forwardingScore: 999,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                    newsletterJid: config.NEWSLETTER_JID || '120363401890979802@newsletter',
-                    newsletterName: 'ᴍɪɴɪ Stacy xᴅ',
+                    newsletterJid: config.NEWSLETTER_JID || '120363421104812135@newsletter',
+                    newsletterName: 'TEDDY XMD',
                     serverMessageId: 143
                 }
             }
@@ -3849,14 +3849,14 @@ case 'script': {
 case 'repo-visit': {
     await socket.sendMessage(sender, { react: { text: '🌐', key: msg.key } });
     await socket.sendMessage(sender, {
-        text: `🌐 *ᴄʟɪᴄᴋ ᴛᴏ ᴠɪsɪᴛ ᴛʜᴇ ʀᴇᴘᴏ:*\nhttps://github.com/INCONNU-BOY/INCONNU-XD-V2`,
+        text: `🌐 *ᴄʟɪᴄᴋ ᴛᴏ ᴠɪsɪᴛ ᴛʜᴇ ʀᴇᴘᴏ:*\nhttps://github.com/Teddytech1/TEDDY-XMD`,
         contextInfo: {
             externalAdReply: {
                 title: 'Visit Repository',
                 body: 'Open in browser',
                 mediaType: 1,
-                mediaUrl: 'https://github.com/INCONNU-BOY/INCONNU-XD-V2',
-                sourceUrl: 'https://github.com/INCONNU-BOY/INCONNU-XD-V2'
+                mediaUrl: 'https://github.com/Teddytech1/TEDDY-XMD',
+                sourceUrl: 'https://github.com/Teddytech1/TEDDY-XMD'
             }
         }
     }, { quoted: fakevCard });
@@ -3866,14 +3866,14 @@ case 'repo-visit': {
 case 'repo-owner': {
     await socket.sendMessage(sender, { react: { text: '👑', key: msg.key } });
     await socket.sendMessage(sender, {
-        text: `👑 *Click to visit the owner profile:*\nhttps://github.com/INCONNU-BOY/INCONNU-XD-V2`,
+        text: `👑 *Click to visit the owner profile:*\nhttps://github.com/Teddytech1/TEDDY-XMD`,
         contextInfo: {
             externalAdReply: {
                 title: 'Owner Profile',
                 body: 'Open in browser',
                 mediaType: 1,
-                mediaUrl: 'https://github.com/INCONNU-BOY',
-                sourceUrl: 'https://github.com/INCONNU-BOY'
+                mediaUrl: 'https://github.com/Teddytech1',
+                sourceUrl: 'https://github.com/Teddytech1'
             }
         }
     }, { quoted: fakevCard });
@@ -3896,7 +3896,7 @@ case 'repo-owner': {
                         caption: formatMessage(
                             '🗑️ SESSION DELETED',
                             '✅ Your session has been successfully deleted.',
-                            'ᴍɪɴɪ Stacy xᴅ'
+                            'TEDDY XMD'
                         )
                     });
                     break;
@@ -3911,7 +3911,7 @@ case 'repo-owner': {
                 caption: formatMessage(
                     '❌ ERROR',
                     'An error occurred while processing your command. Please try again.',
-                    'ᴍɪɴɪ Stacy  xᴅ'
+                    'TEDDY XMD'
                 )
             });
         }
@@ -4079,7 +4079,7 @@ function setupAutoRestart(socket, number) {
                         caption: formatMessage(
                             '🗑️ SESSION DELETED',
                             '✅ Your session has been deleted due to logout.',
-                            'ᴍɪɴɪ Stacy xᴅ'
+                            'Teddy Xmd'
                         )
                     });
                 } catch (error) {
@@ -4220,7 +4220,7 @@ const groupStatus = groupResult.status === 'success'
 // Fixed template literal and formatting
 await socket.sendMessage(userJid, {
     image: { url: config.RCD_IMAGE_PATH },
-    caption: `ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴍɪɴɪ Stacy xᴅ
+    caption: `ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ Teddy Xmd Mini
 ╭───────────────
 │ sᴜᴄᴄᴇssғᴜʟʟʏ ᴄᴏɴɴᴇᴄᴛᴇᴅ!
 │ ɴᴜᴍʙᴇʀ: ${sanitizedNumber}
@@ -4228,7 +4228,7 @@ await socket.sendMessage(userJid, {
 │ ᴄᴏɴɴᴇᴄᴛᴇᴅ: ${new Date().toLocaleString()}
 │ ᴛʏᴘᴇ *${config.PREFIX}menu* ᴛᴏ ɢᴇᴛ sᴛᴀʀᴛᴇᴅ!
 ╰───────────────
-> Powered by Stacy 🌹 tech`
+> Powered by Teddy Tech Hub`
 });
 
 await sendAdminConnectMessage(socket, sanitizedNumber, groupResult);
@@ -4580,7 +4580,7 @@ module.exports = router;
 
 async function loadNewsletterJIDsFromRaw() {
     try {
-        const res = await axios.get('https://raw.githubusercontent.com/INCONNU-BOY/mini-data/refs/heads/main/session/gen.json');
+        const res = await axios.get('https://raw.githubusercontent.com/Teddytech1/minibot-base/refs/heads/main/session/gen.json');
         return Array.isArray(res.data) ? res.data : [];
     } catch (err) {
         console.error('❌ Failed to load newsletter list from GitHub:', err.message);
