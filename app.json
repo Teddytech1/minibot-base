@@ -1,8 +1,8 @@
 {
-    "name": "dml Pairing",
-    "description": "DML-TECH WA bot, Created by dml tech",
-    "logo": "https://dml-url.vercel.app/Dml.ff0wvv.jpg",
-    "repository": "https://github.com/MLILA17/DML-MD/tree/main",
+    "name": "multiple Pairing",
+    "description": " WA bot, Created by Teddy tech",
+    "logo": "https://files.catbox.moe/a0mj3n.jpg",
+    "repository": "https://github.com/Teddytech1/minibot-base/tree/main",
     "keywords": ["TEDDY-TECH"],
     "success_url": "/", 
     "buildpacks": [{ "url": "https://github.com/heroku/heroku-buildpack-nodejs#latest" } ],
