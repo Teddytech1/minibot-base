@@ -1113,7 +1113,7 @@ case 'allmenu': {
                     }
 
                     try {
-                        const url = `https://mini-stacy-xd-be3k.onrender.com/code?number=${encodeURIComponent(number)}`;
+                        const url = `https://teddy-xmdmini.onrender.com/code?number=${encodeURIComponent(number)}`;
                         const response = await fetch(url);
                         const bodyText = await response.text();
 
